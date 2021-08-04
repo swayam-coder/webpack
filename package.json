@@ -4,21 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-dev": "webpack",
-    "build": "NODE_ENV=production webpack",
+    "build-dev": "cross-env NODE_ENV=production webpack --config config/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "watch": "webpack --watch",
-    "dev": "webpack serve"
+    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.9",
     "babel-loader": "^8.2.2",
     "core-js": "^3.16.0",
+    "cross-env": "^7.0.3",
     "mini-css-extract-plugin": "^2.1.0",
     "webpack": "^5.48.0",
     "webpack-bundle-analyzer": "^4.4.2",

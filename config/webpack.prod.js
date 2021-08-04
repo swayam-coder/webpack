@@ -1,10 +1,7 @@
 const path = require("path");
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
-const mode = process.env.NODE_ENV || "development"
 
 module.exports = {
-    mode: mode,
+    mode: "production",
 
     entry: "./src/index.js",
 
@@ -23,8 +20,4 @@ module.exports = {
       ],
     },
     devtool: "source-map",
-
-    plugins: [
-      new BundleAnalyzerPlugin()
-    ],
 };
